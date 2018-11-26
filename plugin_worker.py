@@ -58,7 +58,6 @@ def deal_with_msg(body):
         return
     msg={'result':result}
     send_result(name,id,msg)
-    os.remove(temp_file)
 # to do: if temp_file still exist, it means that the result has not been sent, deal with that
 
 for i in range (run_count):
