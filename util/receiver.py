@@ -4,7 +4,7 @@ import pika
 class Receiver:
     def __init__(self, host,user,pw,queue,callback):
         credentials = pika.PlainCredentials(user, pw)
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host,credentials=credentials))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host,credentials=credentials,heartbeat_interval=0))
         self.channel = self.connection.channel()
         self.channel.queue_declare(queue, durable=True)
         self.queue=queue
