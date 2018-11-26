@@ -32,7 +32,6 @@ def send_result(name,id,msg):
             continue
         break
 def deal_with_msg(body):
-    sleep(3)
     try:
         task=json.loads(body)    
         id=task['_id']
