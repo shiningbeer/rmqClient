@@ -38,7 +38,7 @@ def deal_with_msg(body):
         task=json.loads(body)    
         id=task['_id']
         ip=task['ip']
-        port=str(task['port'])
+        port=task['port']
         name=task['name']
         plugin=task['plugin']
     except Exception, e:
@@ -56,6 +56,8 @@ def deal_with_msg(body):
         msg={'error':repr(e)}
         send_result(name,id,msg)
         return
+    if result==None or result=={}:
+        msg={'result':None}
     msg={'result':result}
     send_result(name,id,msg)
 # to do: if temp_file still exist, it means that the result has not been sent, deal with that
