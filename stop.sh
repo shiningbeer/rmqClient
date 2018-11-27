@@ -1,2 +1,2 @@
-screen -S node -X quit
-screen -S task -X quit
+screen -S cidr -X quit
+screen -S plugin -X quit
