@@ -25,7 +25,7 @@ def send_result(name,id,msg):
     trstr=json.dumps(tr)
     while True:
         try:
-            send=Sender(config.rmq_host,config.rmq_user,config.rmq_password,config.plugin_result_channel)
+            send=Sender(config.rmq_host,config.rmq_user,config.rmq_password,config.ipv4_result_channel)
             send.send_msg(trstr)
             send.close()
         except Exception,e:
@@ -63,5 +63,5 @@ def deal_with_msg(body):
 # to do: if temp_file still exist, it means that the result has not been sent, deal with that
 
 for i in range (run_count):
-    receive=Receiver(config.rmq_host,config.rmq_user,config.rmq_password,config.plugin_task_channel,deal_with_msg)
+    receive=Receiver(config.rmq_host,config.rmq_user,config.rmq_password,config.ipv4_task_channel,deal_with_msg)
     t=Thread(target=receive.start_listen).start()
