@@ -10,7 +10,7 @@ def scan(target,port=80):
         url2='http://' + target+"/VxWorks/FirmInfo"
         r = requests.get(url, headers=headers, timeout=1)
         r2 = requests.get(url2, headers=headers, timeout=1)
-        # print r2.text
+        print r.text,r2.text
         if 'RTU560' in r.text:
             html = r2
             try:

@@ -10,7 +10,7 @@ def scan(target,port=80):
         url2='http://' + target+"/cgi-bin/revision.sh"#http://192.168.0.135/cgi-bin/revision.sh
         r = requests.get(url, headers=headers, timeout=1)
         r2 = requests.get(url2, headers=headers, timeout=1)
-
+        print r.text
         if 'EKI-1526-BE Web Server' in r.text:
             html = r2
             try:
