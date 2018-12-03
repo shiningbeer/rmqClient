@@ -15,6 +15,7 @@ import chardet
 import re
 import ssl
 
+
 '''
 这里因为存在title不规则的情况，示例 <title>...</title >  这里多个空格
 或者<title>... title> 
@@ -93,7 +94,7 @@ def scan(ip,port = 80):
             dict_header['status'] = str(res.status).decode(encoding=html_chardet)      #The coding of all string is unicode 
             dict_header['reason'] = str(res.reason).decode(encoding=html_chardet)
             dict_header['message'] = str(res.msg).decode(encoding=html_chardet)
-            dict_header['html'] = content
+            dict_header['html'] =unicode(content,errors='ignore')
             return (dict_header)
 
     except Exception,e:
