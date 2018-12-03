@@ -4,7 +4,7 @@ headers = {
     'upgrade-insecure-requests': "1",
     'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36',
 }
-def scan(target):
+def scan(target,port=80):
     try:
         url = 'http://' + target+'/cgi-bin/index.cgi'#http://192.168.0.135/cgi-bin/index.cgi
         url2='http://' + target+"/cgi-bin/revision.sh"#http://192.168.0.135/cgi-bin/revision.sh
