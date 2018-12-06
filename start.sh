@@ -10,6 +10,6 @@ screennode=$'ipv4'
 screen -S $screennode -X quit
 screen -dmS $screennode
 sleep 2s
-cmd=$"sudo python ./ipv4_worker.py 50"
+cmd=$"sudo python ./ipv4_worker.py 250"
 screen -S $screennode -X stuff "$cmd"
 screen -S $screennode -X stuff $'\n' 
