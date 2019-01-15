@@ -19,7 +19,6 @@ from binascii import *
 BUFSIZE = 10240
 
 
-#if __name__ == '__main__':
 def scan(ip,port=789):
 	probe_manufacturer = a2b_hex("0004012b1b00")
 	
@@ -58,3 +57,6 @@ def scan(ip,port=789):
 			##to_return["Port"] = port
 			##to_return["TransportProtocol"] = "TCP"	
 	return to_return
+
+if __name__ == '__main__':
+	print scan('')

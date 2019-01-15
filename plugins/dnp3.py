@@ -111,7 +111,6 @@ def funct_lookup(str_id):
       num = second_value
    result = "%s (%d)" %(funct_id, num)
    return result
-#if __name__ == '__main__':
 def scan(ip,port=20000):
    to_return={}
    
@@ -161,3 +160,7 @@ def scan(ip,port=20000):
 
    return to_return
 
+
+if __name__ == '__main__':
+   print scan('166.247.131.139')
+   print scan('216.197.184.153')

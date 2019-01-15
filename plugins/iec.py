@@ -18,7 +18,6 @@ from binascii import *
 BUFSIZE = 10240	#缓冲区大小10k
 
 
-#if __name__ == '__main__':
 def scan(ip,port = 2404):
 	to_return={}
 	#ip = "37.61.202.200"
@@ -74,5 +73,7 @@ def scan(ip,port = 2404):
 		#to_return["error"] = str(e)
 		to_return.clear()
 	
-	print to_return
 	return to_return
+
+if __name__ == '__main__':
+	print scan('37.61.202.200')

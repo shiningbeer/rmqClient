@@ -46,7 +46,6 @@ def getZeroTerminatedString(response,pos):
 			end_pos = i + 1
 			break
 	return end_pos, data
-#if __name__ == '__main__':
 def scan(ip,port = 9600):
 		
 	req_addr = a2b_hex("46494e530000000c000000000000000000000000")
@@ -133,3 +132,6 @@ def scan(ip,port = 9600):
 			#to_return["TransportProtocol"] = "TCP"
 	return to_return
 
+
+if __name__ == '__main__':
+	print scan('5.144.145.198')

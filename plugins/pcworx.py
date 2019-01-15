@@ -39,7 +39,6 @@ def getZeroTerminatedString(response,pos):
 			end_pos = i + 1
 			break
 	return end_pos, data
-#if __name__ == '__main__':
 def scan(ip,port = 1962):
 
 	init_coms = a2b_hex("0101001a0000000078800003000c494245544830314e305f4d00")
@@ -95,3 +94,5 @@ def scan(ip,port = 1962):
 			#to_return["Port"] = port
 			#to_return["TransportProtocol"] = "TCP"
 	return to_return
+if __name__ == '__main__':
+	print scan('117.141.104.219')
